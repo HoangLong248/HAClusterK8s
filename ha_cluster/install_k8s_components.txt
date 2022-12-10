@@ -1,0 +1,12 @@
+# Disable swap
+swapoff -a; sed -i '/swap/d' /etc/fstab
+
+# Install docker
+cd /tmp/ && curl -fsSL https://get.docker.com -o get-docker.sh
+DRY_RUN=1 sudo sh ./get-docker.sh
+
+# Install k8s component
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+sudo apt-get install curl
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+sudo apt-get install kubeadm kubelet kubectl -y
