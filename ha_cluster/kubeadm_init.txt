@@ -34,4 +34,4 @@ systemctl restart containerd
 kubectl --kubeconfig=/etc/kubernetes/admin.conf get nodes
 
 ****install flannel****
-kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f kube-flannel.yml
