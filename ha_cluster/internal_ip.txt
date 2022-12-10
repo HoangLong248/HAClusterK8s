@@ -1,0 +1,26 @@
+****open vim tool*******
+vim /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+***set internal node for master 1***
+Environment="KUBELET_EXTRA_ARGS=--node-ip=172.16.16.211"
+
+***set internal node for master 2***
+Environment="KUBELET_EXTRA_ARGS=--node-ip=172.16.16.212"
+
+***set internal node for master 3***
+Environment="KUBELET_EXTRA_ARGS=--node-ip=172.16.16.213"
+
+***set internal node for worker 1***
+Environment="KUBELET_EXTRA_ARGS=--node-ip=172.16.16.221"
+
+***set internal node for worker 2***
+Environment="KUBELET_EXTRA_ARGS=--node-ip=172.16.16.222"
+
+***set internal node for worker 3***
+Environment="KUBELET_EXTRA_ARGS=--node-ip=172.16.16.223"
+
+***restart kubelet
+{
+systemctl daemon-reload
+systemctl restart kubelet
+}
