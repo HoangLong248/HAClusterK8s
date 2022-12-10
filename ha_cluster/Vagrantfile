@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Worker node
-  (1..3).each do | i |
+  (1..2).each do | i |
     config.vm.define "worker#{i}" do | node |
       node.vm.box = "bento/ubuntu-20.04"
       node.vm.hostname = "worker#{i}"
