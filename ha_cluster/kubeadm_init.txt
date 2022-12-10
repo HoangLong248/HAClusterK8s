@@ -39,7 +39,9 @@ kubectl apply -f kube-flannel.yml
 
 # Join control-plane node
 kubeadm join 172.16.16.200:6443 --token XXXXXXX \
-        --discovery-token-ca-cert-hash XXXXXXX \
-        --control-plane --certificate-key XXXXXXX
+      --discovery-token-ca-cert-hash XXXXXXX \
+      --control-plane --certificate-key XXXXXXX
 
 # Join worker node
+kubeadm join 172.16.16.200:6443 --token XXXXXXX \
+      --discovery-token-ca-cert-hash XXXXXXX
